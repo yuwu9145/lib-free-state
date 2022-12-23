@@ -1,0 +1,30 @@
+{
+  "name": "rxjs-store",
+  "version": "1.0.0",
+  "description": "plain rxjs state",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuwu9145/rxjs-store.git"
+  },
+  "keywords": [
+    "rxjs",
+    "store",
+    "state"
+  ],
+  "author": "Yuchao Wu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuwu9145/rxjs-store/issues"
+  },
+  "homepage": "https://github.com/yuwu9145/rxjs-store#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "rxjs": "^7.8.0",
+    "typescript": "^4.9.4"
+  }
+}
