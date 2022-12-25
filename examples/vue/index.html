@@ -1,0 +1,42 @@
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+<div id="app">
+  {{ message }}
+  <button @click="increment">
+    {{ state.count }}
+  </button>
+</div>
+<script type="module">
+  import { createApp, reactive } from 'vue'
+
+  createApp({
+    setup() {
+      const state = reactive({ count: 1 })
+
+      function increment() {
+        state.count++
+      }
+
+      // expose the state to the template
+      return {
+        state,
+        increment
+      }
+    }, 
+    data() {
+      return {
+        message: 'Hello Vue aa!'
+      }
+    }
+  }).mount('#app')
+</script>
+<!-- <script type="module" src="./index.js">
+  /* JavaScript module code here */
+  import { test } from './index'
+  test.test()
+</script> -->
