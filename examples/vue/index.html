@@ -1,7 +1,8 @@
 <script type="importmap">
   {
     "imports": {
-      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+      "book-store": "./books.store.js"
     }
   }
 </script>
@@ -13,9 +14,13 @@
 </div>
 <script type="module">
   import { createApp, reactive } from 'vue'
+  import BookFactory from 'book-store'
 
   createApp({
-    setup() {
+    async setup() {
+      const { books, loadBooks } = BookFactory()
+      loadBooks()
+      console.log('--books--', books)
       const state = reactive({ count: 1 })
 
       function increment() {
