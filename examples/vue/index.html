@@ -8,6 +8,13 @@
 </script>
 <div id="app">
   {{ message }}
+  <div
+    v-for="book in state.books"
+    :key="book.key"
+  >
+    {{ book.name }}
+  </div>
+  
   <button @click="increment">
     {{ state.count }}
   </button>
@@ -17,11 +24,22 @@
   import BookFactory from 'book-store'
 
   createApp({
-    async setup() {
+    setup() {
       const { books, loadBooks } = BookFactory()
       loadBooks()
-      console.log('--books--', books)
-      const state = reactive({ count: 1 })
+      
+      setTimeout(() => {
+        books.splice(2, 3, {
+          'key': 3,
+          'name': 'book 3'
+        })
+        console.log('-------------', books)
+      }, 1000)
+
+      const state = reactive({ 
+        count: 1,
+        books
+      })
 
       function increment() {
         state.count++

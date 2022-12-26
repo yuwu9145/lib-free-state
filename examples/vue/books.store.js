@@ -9,11 +9,14 @@ async function loadBooks() {
   // fake http payload
   const response = await Promise.resolve([
     {
-      'id': 1,
+      'key': 1,
       'name': 'book 1'
+    },
+    {
+      'key': 2,
+      'name': 'book 2'
     }
   ])
-  console.log('----response---', response)
   books.splice(0, response.length, ...response)
 }
 
