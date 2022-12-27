@@ -1,17 +1,32 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { reactive } from 'vue'
+import { books, loadBooks } from './books.store'
+
+loadBooks()
+      
+setTimeout(() => {
+  books.splice(2, 3, {
+    'key': 3,
+    'name': 'book 3'
+  })
+}, 2000)
+
+const state = reactive({ 
+  books
+})
+
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div
+    v-for="book in state.books"
+    :key="book.key"
+  >
+    {{ book.name }}
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <button @click="increment">
+    {{ state.count }}
+  </button>
 </template>
 
 <style scoped>
