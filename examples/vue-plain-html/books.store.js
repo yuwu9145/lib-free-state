@@ -1,6 +1,8 @@
 import { ref, reactive } from 'vue'
 
 // books store
+// state
+
 // getters
 export const books = reactive([])
 export const isBusy = ref(false)
