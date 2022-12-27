@@ -1,10 +1,12 @@
 import { ref, reactive } from 'vue'
 
 // books store
-const books = reactive([])
-const isBusy = ref(false)
+// getters
+export const books = reactive([])
+export const isBusy = ref(false)
 
-async function loadBooks() {
+// actions
+export async function loadBooks() {
   isBusy.value = true
   // fake http payload
   const response = await Promise.resolve([
@@ -18,12 +20,4 @@ async function loadBooks() {
     }
   ])
   books.splice(0, response.length, ...response)
-}
-
-export default function () {
- return {
-    loadBooks,
-    books,
-    isBusy
-  }
 }

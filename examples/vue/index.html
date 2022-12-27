@@ -14,18 +14,16 @@
   >
     {{ book.name }}
   </div>
-  
   <button @click="increment">
     {{ state.count }}
   </button>
 </div>
 <script type="module">
   import { createApp, reactive } from 'vue'
-  import BookFactory from 'book-store'
+  import { books, loadBooks } from 'book-store'
 
   createApp({
     setup() {
-      const { books, loadBooks } = BookFactory()
       loadBooks()
       
       setTimeout(() => {
@@ -33,7 +31,6 @@
           'key': 3,
           'name': 'book 3'
         })
-        console.log('-------------', books)
       }, 1000)
 
       const state = reactive({ 

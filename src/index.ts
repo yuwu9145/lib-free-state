@@ -1,5 +1,10 @@
-import { of } from 'rxjs'
+export function createGetter<T>(state: any, prop: any): T {
+  return state[prop]
+}
 
-export function test(): void {
-  of(2).subscribe(s => console.log(s))
+export function updateState(state: any, prop: any, value: any): void {
+  state = {
+    ...state,
+    [prop]: value
+  } 
 }
