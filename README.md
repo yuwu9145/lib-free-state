@@ -12,7 +12,7 @@ However, these libraries have common drawbacks:
 
 Fortunately, most frontend frameworks' built-in technologies enabling above state features from scratch.
 
-## Vue 3 (plain state file using composition api)
+## Vue 3 (state file using plain composition api)
 
 In this the sample file:
 - Its state is singleton because it is used in components as `import { books, loadBooks } from './books.store'`
