@@ -10,7 +10,7 @@ However, these libraries have common drawbacks:
 - they have learning curves
 - too much boilerplate that overkills a simple feature (e.g. redux & NGRX)
 
-Fortunately, most frontend frameworks' built-in technologies enabling above state features from scratch.
+Fortunately, most frontend frameworks' built-in technologies enabling to achieve above state features via writing your own state file from scratch.
 
 ## Vue 3 (state file using plain composition api)
 
