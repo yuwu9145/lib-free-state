@@ -12,7 +12,15 @@ However, these libraries have common drawbacks:
 
 Fortunately, most frontend frameworks' built-in technologies enabling above state features from scratch.
 
-## Vue 3 (taking advantage of composition api)
+## Vue 3 (plain state file using composition api)
+
+In this the sample file:
+- Its state is singleton because it is used in components as `import { books, loadBooks } from './books.store'`
+- `books` & `isBusy` are exposed as readonly
+- `state.books` & `state.isBusy` are internally mutable
+- `books` & `isBusy` are reactive
+
+Feel free to copy this sample code as a template to try to construct your own state file :)
 
 ```ts
 import { ref, reactive, readonly } from 'vue'
