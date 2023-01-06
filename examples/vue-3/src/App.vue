@@ -9,6 +9,7 @@ setTimeout(() => {
     'key': 3,
     'name': 'book 3'
   })
+  console.log('----componnet---', books)
 }, 2000)
 
 const state = reactive({ 

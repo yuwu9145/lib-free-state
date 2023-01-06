@@ -1,18 +1,25 @@
-import { ref, reactive } from 'vue'
-import { createGetter, updateState } from 'simple-store'
+import { ref, reactive, readonly } from 'vue'
 
-// books store
-// state
+/**
+ * PRIVATE state
+ */
+const state = reactive({
+  books: [], // array
+  isBusy: false // primitive
+})
 
-// getters
-export const books = reactive([])
-export const isBusy = ref(false)
+/**
+ * PUBlIC getters (must be readonly)
+ */
+export const books = readonly(state.books)
+export const isBusy = readonly(ref(state.isBusy))
 
-// actions
+/**
+ * PUBLIC actions
+ */
 export async function loadBooks() {
-  isBusy.value = true
-  // fake http payload
-  const response = await Promise.resolve([
+  state.isBusy = true
+  const booksResponse = await Promise.resolve([
     {
       'key': 1,
       'name': 'book 1'
@@ -22,7 +29,8 @@ export async function loadBooks() {
       'name': 'book 2'
     }
   ]) as any[]
-
+  
+  state.isBusy = false
   // @ts-ignore
-  books.splice(0, response.length, ...response)
+  state.books.splice(0, booksResponse.length, ...booksResponse)
 }
