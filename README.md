@@ -71,65 +71,70 @@ export async function loadBooks() {
 - REACTIVITY: `books$` & `isBusy$` are rxjs observables which emit latest changes
 ```ts
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, forkJoin, Observable, Subject } from 'rxjs';
-import { distinctUntilChanged, map, switchMap } from 'rxjs/operators';
+import { BehaviorSubject, from, Observable } from 'rxjs';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 
-const defaultState = {
-  books: [], // array
-  isBusy: false // primitive
+export interface BookStoreState {
+  books: { id: number; name: string }[]; // array
+  isBusy: false; // primitive
 }
+
+const defaultState: BookStoreState = {
+  books: [], // array
+  isBusy: false, // primitive
+};
 
 let _state = defaultState;
 
 @Injectable({ providedIn: 'root' })
 export class BookStoreFacade {
-  
-  private store = new BehaviorSubject(defaultState);
-  private state$: Observable = this.store.asObservable();
- 
+  private store = new BehaviorSubject<BookStoreState>(defaultState);
+  private state$: Observable<BookStoreState> = this.store.asObservable();
+
   /**
    * PUBlIC getters/selectors (must be readonly)
    */
   books$ = this.state$.pipe(
-    map(state => Object.freeze(state.books)), // Use Object.freeze to make emit object completely readonly
+    map((state) => Object.freeze(state.books)), // Use Object.freeze to make emit object completely readonly
     distinctUntilChanged()
   );
-  
+
   isBusy$ = this.state$.pipe(
-    map(state => state.isBusy),
+    map((state) => state.isBusy),
     distinctUntilChanged()
   );
 
   /**
-    * PUBLIC actions
-  */
+   * PUBLIC actions
+   */
   loadBooks() {
     this.updateState({
       ..._state,
-      isBusy: true
+      isBusy: true,
     });
-    Promise.resolve([
-      {
-        'key': 1,
-        'name': 'book 1'
-      },
-      {
-        'key': 2,
-        'name': 'book 2'
-      }
-    ]).subscribe(books => {
-        this.updateState({
-          ..._state,
-          books,
-          isBusy: false
-        });
-      })
-    }
+    from(
+      Promise.resolve([
+        {
+          id: 1,
+          name: 'book 1',
+        },
+        {
+          id: 2,
+          name: 'book 2',
+        },
+      ])
+    ).subscribe((books) => {
+      this.updateState({
+        ..._state,
+        books,
+        isBusy: false,
+      });
+    });
   }
 
   private updateState(state) {
     this.store.next((_state = state));
   }
-
 }
+
 ```
