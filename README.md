@@ -13,7 +13,6 @@ State libraries (vuex for vue 2, pinia for vue 3, NGRX for Angular etc.) help yo
 - They have learning curves
 - Some of them have too much boilerplate that overkills a simple feature (e.g. redux & NGRX)
 
-In order to preserve above critical features and also achieve simplicity, major frameworks have their own built-in technologies enabling to quickly write state file from scratch.
 ## :heart_eyes: Write your own state management logic using built-in technologies/APIs 
 ### Vue 3 (state file using plain composition api)
 
