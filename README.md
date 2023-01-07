@@ -127,7 +127,7 @@ export class BookStoreFacade {
     }
   }
 
-  private updateState(state: XfileState) {
+  private updateState(state) {
     this.store.next((_state = state));
   }
 
