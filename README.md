@@ -1,18 +1,18 @@
 # library free state
-
-Using shared state is imperative when writing large-scale frontend applications. State libraries (vuex for vue 2, pinia for vue 3, NGRX for Angular etc.) help you to achieve:
+## :thinking: What does state management libraries do? 
+State libraries (vuex for vue 2, pinia for vue 3, NGRX for Angular etc.) help you to achieve:
 - SINGLE SOURCE OF TRUTH: singleton state object that is shared across components
 - IMMUTABILITY: immutable or ready-only declarative mapping of the state exposed to components (getters & selectors)
 - MUTABILITY: expose actions allowing state to be internally mutable in response to certain events
 - REACTIVITY: immutable getters/selectors must be reactive
 
-However, these libraries have common drawbacks:
-- they have learning curves
-- too much boilerplate that overkills a simple feature (e.g. redux & NGRX)
+## :worried: State management libraries are NOT perfect
+- They have learning curves
+- Some of them have too much boilerplate that overkills a simple feature (e.g. redux & NGRX)
 
 In order to preserve above critical features and also achieve simplicity, major frameworks have their own built-in technologies enabling to quickly write state file from scratch.
-
-## Vue 3 (state file using plain composition api)
+## :heart_eyes: Write your own state management logic using built-in technologies/APIs 
+### Vue 3 (state file using plain composition api)
 
 In this the sample file:
 - SINGLE SOURCE OF TRUTH: Its state is singleton because it is used in components as `import { books, loadBooks } from './books.store'`
