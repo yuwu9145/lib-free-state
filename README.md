@@ -1,4 +1,4 @@
-# Library free state management
+# Library-free state management
 
 Why do you use a state management library if you can easily write it your own?
 
