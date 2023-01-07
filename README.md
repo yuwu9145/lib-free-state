@@ -1,24 +1,24 @@
 # library free state
 
-Using shared state is imperative when writing large-scale frontend applications. There are a variety of state libraries (vuex for vue 2, pinia for vue 3, NGRX for Angular etc.) that help you to achieve:
-- maintain singleton state object that is shared across components
-- state object must be immutable or ready-only in places consuming it
-- state object must also be internally mutable to allow public actions to change state
-- state getters/selectors must be reactive
+Using shared state is imperative when writing large-scale frontend applications. State libraries (vuex for vue 2, pinia for vue 3, NGRX for Angular etc.) help you to achieve:
+- SINGLE SOURCE OF TRUTH: singleton state object that is shared across components
+- IMMUTABILITY: immutable or ready-only declarative mapping of the state exposed to components (getters & selectors)
+- MUTABILITY: expose actions allowing state to be internally mutable in response to certain events
+- REACTIVITY: immutable getters/selectors must be reactive
 
 However, these libraries have common drawbacks:
 - they have learning curves
 - too much boilerplate that overkills a simple feature (e.g. redux & NGRX)
 
-Fortunately, most frontend frameworks' built-in technologies enabling to achieve above state features via writing your own state file from scratch.
+In order to preserve above critical features and also achieve simplicity, major frameworks have their own built-in technologies enabling to quickly write state file from scratch.
 
 ## Vue 3 (state file using plain composition api)
 
 In this the sample file:
-- Its state is singleton because it is used in components as `import { books, loadBooks } from './books.store'`
-- `books` & `isBusy` are exposed as readonly
-- `state.books` & `state.isBusy` are internally mutable
-- `books` & `isBusy` are reactive
+- SINGLE SOURCE OF TRUTH: Its state is singleton because it is used in components as `import { books, loadBooks } from './books.store'`
+- IMMUTABILITY: `books` & `isBusy` are exposed as readonly
+- MUTABILITY: `state.books` & `state.isBusy` are internally mutable
+- REACTIVITY: `books` & `isBusy` are reactive
 
 Feel free to copy this sample code as a template to try to construct your own state file :)
 
