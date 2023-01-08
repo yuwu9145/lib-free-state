@@ -1,5 +1,5 @@
 export default {
-  title: 'Library-free state',
+  title: 'Library-Free State',
   description: 'Library-Free state for Javascript frameworks',
   head: [
     [
@@ -13,7 +13,7 @@ export default {
     ]
   ],
   themeConfig: {
-    siteTitle: 'Library-free state',
+    siteTitle: 'Library-Free State',
     sidebar: [
       {
         items: [
@@ -27,6 +27,9 @@ export default {
           { text: 'Angular (2+)', link: '/angular' },
         ],
       },
+    ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/yuwu9145/lib-free-state' },
     ]
   }
 }

@@ -1,4 +1,4 @@
-# Library-free state management
+# Library-Free State Management
 
 
 ## Modern frameworks have built-in technologies allowing to write state management critical features by your own
