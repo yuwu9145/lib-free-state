@@ -1,7 +1,7 @@
 export default {
   title: 'Library-free state',
   description: 'Just playing around.',
-  base: '/lib-free-state',
+  base: '/lib-free-state/',
   themeConfig: {
     siteTitle: 'Library-free state',
     nav: [
