@@ -69,6 +69,8 @@ export async function loadBooks() {
 - IMMUTABILITY: `books$` emit readonly freezed object `Object.freeze(state.books)` & `isBusy$` emits plain privimitive boolean
 - MUTABILITY: `state.books` & `state.isBusy` are internally mutable via calling `updateState(...)`
 - REACTIVITY: `books$` & `isBusy$` are rxjs observables which emit latest changes
+
+
 ```ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, from, Observable } from 'rxjs';
