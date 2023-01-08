@@ -3,7 +3,6 @@ export default {
   description: 'Just playing around.',
   themeConfig: {
     siteTitle: 'Library-free state',
-    base: '/lib-free-state/',
     nav: [
       { text: 'Guide', link: '/guide' },
       {
