@@ -1,6 +1,8 @@
 # Library-free state management
 
+
 Why do you use a state management library if you can easily write it your own?
+
 
 ## :thinking: What does state management libraries do? 
 State libraries (vuex for vue 2, pinia for vue 3, NGRX for Angular etc.) help you to achieve:
