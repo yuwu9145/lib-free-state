@@ -1,7 +1,7 @@
 # Vue 3
 ## Build state store by using Composition api
 - **SINGLE SOURCE OF TRUTH**: achieved by importing & reusing the same state object
-- **IMMUTABILITY**: achieved by using [composition API - readonly()](https://vuejs.org/api/reactivity-core.html#readonly)
+- **IMMUTABILITY**: achieved by using [composition API - readonly()](https://vuejs.org/api/reactivity-core.html#readonly) - avoid being arbitrarily mutated by components
 - **MUTABILITY**: reactive proxy object can be changed internally
 - **REACTIVITY**: [Vue reactivity engine](https://vuejs.org/guide/essentials/reactivity-fundamentals.html) is reactive
 
