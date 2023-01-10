@@ -1,6 +1,6 @@
 export default {
   title: 'Library-Free State',
-  description: 'Library-Free state for Javascript frameworks',
+  description: 'Library-Free state for Javascript frameworks (Vue 3 using composition api, Angular using rxjs)',
   head: [
     [
       'script',
