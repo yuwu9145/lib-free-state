@@ -23,7 +23,7 @@ export default {
       {
         text: 'Frameworks',
         items: [
-          { text: 'Vue 3', link: '/vue3' },
+          { text: 'Vue 3 (composition API)', link: '/vue3' },
           { text: 'Angular (2+)', link: '/angular' },
         ],
       },
