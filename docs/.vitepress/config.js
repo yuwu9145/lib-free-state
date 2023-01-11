@@ -14,22 +14,39 @@ export default {
   ],
   themeConfig: {
     siteTitle: 'Library-Free State',
-    sidebar: [
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2023-present <a href="https://github.com/yuwu9145">Yuchao Wu</a>'
+    },
+    nav: [
       {
-        items: [
-          { text: 'Introduction', link: '/introduction' },
-        ],
+        text: "Vue 3",
+        activeMatch: "/vue3",
+        link: "/vue3",
       },
       {
-        text: 'Frameworks',
-        items: [
-          { text: 'Vue 3 (composition API)', link: '/vue3' },
-          { text: 'Angular (2+)', link: '/angular' },
-        ],
-      },
+        text: "Angular (2+)",
+        activeMatch: "/angular",
+        link: "/angular",
+      }
     ],
+    // sidebar: {
+    //   '/frameworks/': [
+    //     {
+    //       text: "Vue 3 (composition API)",
+    //       items: [{ text: "Vue 3 (composition API)", link: "/vue3" }],
+    //     },
+    //     {
+    //       text: "Vue 3 (composition API)",
+    //       items: [{ text: "Vue 3 (composition API)", link: "/vue3" }],
+    //     },
+    //     // { text: 'Vue 3 (composition API)', link: '/vue3' },
+    //     // { text: 'Angular (2+)', link: '/angular' },
+    //   ]
+    // },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/yuwu9145/lib-free-state' },
-    ]
+    ],
+    
   }
 }
